@@ -5,14 +5,14 @@ import {
   Heading,
   HStack,
   IconButton,
-} from "@chakra-ui/react";
-import dayjs from "dayjs";
-import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
+} from '@chakra-ui/react';
+import dayjs from 'dayjs';
+import { TiArrowLeftThick, TiArrowRightThick } from 'react-icons/ti';
 
-import { DateBox } from "./DateBox";
-import { useAppointments } from "./hooks/useAppointments";
+import { DateBox } from './DateBox';
+import { useAppointments } from './hooks/useAppointments';
 
-import { UserAppointments } from "@/components/user/UserAppointments";
+import { UserAppointments } from '@/components/user/UserAppointments';
 
 export function Calendar() {
   const currentDate = dayjs();
@@ -49,6 +49,7 @@ export function Calendar() {
           Only show available
         </Checkbox>
       </HStack>
+
       <Grid templateColumns="repeat(7, 1fr)" gap={4} my={5} mx={10}>
         {/* first day needs a grid column */}
         <DateBox
@@ -60,7 +61,7 @@ export function Calendar() {
         {[...Array(monthYear.lastDate)].map((_, i) =>
           i > 0 ? (
             <DateBox key={i} date={i + 1} appointments={appointments[i + 1]} />
-          ) : null
+          ) : null,
         )}
       </Grid>
       <UserAppointments />
